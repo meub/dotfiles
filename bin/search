@@ -1,5 +1,7 @@
 #!/bin/sh
 
+#Custom Search Function
+
 if [ "$2" ]
 then
     if [ "$1" == "-" ]
