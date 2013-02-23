@@ -1,25 +1,9 @@
-#Upload image to images bucket
+#Meub's functions dotfile
+# ~/.aliases — Forked from https://github.com/mathiasbynens/dotfiles
 
+#Upload image to images bucket
 function s3image() {
 	s3cmd put --acl-public --guess-mime-type "$@" s3://images.alexmeub.com/"$@"
-}
-
-# Simple calculator
-function calc() {
-	local result=""
-	result="$(printf "scale=10;$*\n" | bc --mathlib | tr -d '\\\n')"
-	#                       └─ default (when `--mathlib` is used) is 20
-	#
-	if [[ "$result" == *.* ]]; then
-		# improve the output for decimal numbers
-		printf "$result" |
-		sed -e 's/^\./0./'        `# add "0" for cases like ".5"` \
-		    -e 's/^-\./-0./'      `# add "0" for cases like "-.5"`\
-		    -e 's/0*$//;s/\.$//'   # remove trailing zeros
-	else
-		printf "$result"
-	fi
-	printf "\n"
 }
 
 # Create a new directory and enter it

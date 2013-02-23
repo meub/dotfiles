@@ -1,5 +1,10 @@
+#Meub's aliases dotfile
+# ~/.aliases — Forked from https://github.com/mathiasbynens/dotfiles
+
 #Notes
-#Change en1 to en0 for wireless
+#Might have to change en0/en1 for wired/wireless
+#Assumes /Dropbox setup
+
 
 # Easier navigation: .., ..., ...., ....., ~ and -
 alias ..="cd .."

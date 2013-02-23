@@ -5,6 +5,7 @@
 # Slightly altered
 	# Added Disable Mouse Acceleration
 	# Added fix for TotalTerminal
+	# Removed terminal styles
 
 # Ask for the administrator password upfront
 sudo -v
