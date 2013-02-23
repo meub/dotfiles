@@ -1,0 +1,30 @@
+#!/bin/sh
+
+if [ "$2" ]
+then
+    if [ "$1" == "-" ]
+    then
+        #echo "----Searching all files----"
+        grep -ir "$2" .
+    else
+        #echo "----Searching files which match file name----"
+        find . -iname "$1" -exec grep -i "$2" {} ";"
+    fi
+else
+    if [ "$1" ]
+    then
+        #echo "----Finding files by name----"
+        find . -iname "$1"
+    else
+        echo "------- Searches the current directory -------"
+        echo ""
+        echo "Search by file name only: "
+        echo "   search *.html"
+        echo ""
+        echo "Search inside files which match file name: "
+        echo "   search *.html \"<meta\""
+        echo ""
+        echo "Search inside all files: "
+        echo "   search - \"<meta\""
+    fi
+fi
